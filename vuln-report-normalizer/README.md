@@ -42,6 +42,12 @@ normalized_vulns.csv
 python vuln_normalizer.py
 ```
 
+## Example Workflow
+1. Export findings from a scanner or tracking sheet
+2. Save them in CSV format
+3. Run the script
+4. Review the cleaned output and assign remediation owners
+
 ## Sample Console Output
 
 ```text
@@ -58,9 +64,3 @@ High        1
 Critical    1
 Low         1
 ```
-
-## Example Workflow
-1. Export findings from a scanner or tracking sheet
-2. Save them in CSV format
-3. Run the script
-4. Review the cleaned output and assign remediation owners
