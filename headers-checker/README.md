@@ -51,3 +51,23 @@ This contains:
 - header status
 - header values (if present)
 - risk note (if missing)
+
+## Sample Console Output
+
+```text
+Checking headers for: https://example.com
+============================================================
+[FOUND] X-Frame-Options
+        Value: SAMEORIGIN
+------------------------------------------------------------
+[MISSING] Content-Security-Policy
+          Risk: Helps reduce XSS and content injection risks by controlling allowed content sources.
+------------------------------------------------------------
+
+Summary
+============================================================
+Headers Found   : 3
+Headers Missing : 3
+
+Report exported to headers_report.json
+```
