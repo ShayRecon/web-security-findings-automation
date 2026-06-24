@@ -1,25 +1,49 @@
 # IOC Enrichment Skeleton
 
 ## Objective
-This script provides a simple starting point for organizing IOC enrichment workflows.
+This script provides a lightweight foundation for IOC triage and enrichment workflows by identifying the IOC type and preparing a structured output format for future threat intelligence integration.
 
 ## Supported IOC Types
-- IP addresses
+- IPv4 addresses
 - Domains
-- File hashes
+- MD5 hashes
+- SHA1 hashes
+- SHA256 hashes
 
-## Current Scope
-This initial version does not query external threat intelligence platforms. Instead, it classifies the IOC type and prepares a structured output that can later be extended with:
-- VirusTotal
-- AbuseIPDB
-- AlienVault OTX
-- Internal blocklists
-- SIEM enrichment pipelines
+## Features
+- Detects IOC type using pattern matching
+- Differentiates between common hash formats
+- Produces structured JSON output
+- Includes placeholder fields for enrichment and analyst notes
+- Can be extended with:
+  - VirusTotal
+  - AbuseIPDB
+  - AlienVault OTX
+  - internal blocklists / SIEM enrichment
 
-## Goal
-Build a reusable enrichment helper for SOC and incident response workflows.
+## Use Cases
+Useful for:
+- SOC alert triage
+- IOC review during investigations
+- preparing enrichment pipelines
+- building future threat intel integrations
 
 ## Usage
 ```bash
 python ioc_enrichment.py
 ```
+
+Then enter an IOC when prompted.
+
+## Output
+The script creates:
+
+```bash
+ioc_report.json
+```
+
+This contains:
+- original IOC
+- detected type
+- enrichment placeholder fields
+- analyst notes section
