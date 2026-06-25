@@ -1,73 +1,53 @@
-# HTTP Security Headers Checker
+# Web Security Findings Automation
 
-## Objective
-This script checks whether a target website returns common HTTP security headers and highlights missing protections.
+This project automates basic web application security reviews by assessing HTTP security headers and cookie security settings.
 
-## Headers Checked
-- Content-Security-Policy
-- Strict-Transport-Security
-- X-Frame-Options
-- X-Content-Type-Options
-- Referrer-Policy
-- Permissions-Policy
+## Security Checks
 
-## Why These Headers Matter
-Missing security headers can increase exposure to:
-- Clickjacking
-- MIME-type sniffing
-- Insecure browser behavior
-- Data leakage through referrers
-- Weaker client-side hardening
+### HTTP Security Headers
 
-## Features
-- Checks for common security headers
-- Displays whether each header is present or missing
-- Provides a short risk explanation for missing headers
-- Prints a summary of findings
-- Exports results to a JSON file
+* Content-Security-Policy
+* Strict-Transport-Security
+* X-Frame-Options
+* X-Content-Type-Options (nosniff)
+* Referrer-Policy
+* Permissions-Policy
 
-## Usage
-```bash
-python headers_checker.py
-```
+### Cookie Security
 
-Then enter a target URL when prompted.
+* Secure Flag
+* HttpOnly Flag
+* SameSite Attribute
 
-## Example Use Cases
-- Quick AppSec hygiene checks
-- Recon during VAPT
-- Basic review of web application response headers
-- Demo project for security automation workflows
+## Output Files
 
-## Output
-The script creates a file named:
+### headers_report.json
 
-```bash
-headers_report.json
-```
+Technical assessment results.
 
-This contains:
-- target URL
-- header status
-- header values (if present)
-- risk note (if missing)
+### headers_vuln_report.csv
 
-## Sample Console Output
+Remediation-ready findings report containing:
 
-```text
-Checking headers for: https://example.com
-============================================================
-[FOUND] X-Frame-Options
-        Value: SAMEORIGIN
-------------------------------------------------------------
-[MISSING] Content-Security-Policy
-          Risk: Helps reduce XSS and content injection risks by controlling allowed content sources.
-------------------------------------------------------------
+* Asset
+* Finding
+* Severity
+* Description
+* Recommendation
+* Status
+* Owner
 
-Summary
-============================================================
-Headers Found   : 3
-Headers Missing : 3
+## Example Workflow
 
-Report exported to headers_report.json
-```
+1. Enter target URL
+2. Review headers and cookies
+3. Identify missing controls
+4. Generate findings
+5. Export remediation report
+
+## Intended Audience
+
+* Application Security Engineers
+* VAPT Analysts
+* Security Consultants
+* DevSecOps Teams
