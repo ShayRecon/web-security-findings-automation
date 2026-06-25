@@ -61,3 +61,23 @@ Contains remediation-ready findings including:
 * VAPT Analysts
 * Security Consultants
 * DevSecOps Teams
+
+## Sample Output
+
+The tool generates:
+
+* Technical JSON assessment reports
+* Remediation-ready CSV findings reports
+* Finding severity summaries
+
+### Example Findings
+
+* Missing Content-Security-Policy
+* Missing Strict-Transport-Security
+* Missing X-Frame-Options
+* Missing or insecure X-Content-Type-Options
+* Cookie missing Secure flag
+* Cookie missing HttpOnly flag
+* Cookie missing SameSite attribute
+* Server Version Disclosure
+* Weak TLS Configuration
