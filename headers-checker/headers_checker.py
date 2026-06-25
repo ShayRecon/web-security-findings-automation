@@ -105,21 +105,22 @@ def check_headers(url):
         # TLS Check
         check_tls(url, findings)
 
-        # Cookie Checks
+                # Cookie Checks
         print("\nChecking Cookies")
         print("=" * 60)
+
         cookie_count = len(response.cookies)
 
-print(f"Cookies Found: {cookie_count}")
+        print(f"Cookies Found: {cookie_count}")
 
-if cookie_count == 0:
-    print("No cookies observed in response.")
+        if cookie_count == 0:
+            print("No cookies observed in response.")
 
-       for cookie in response.cookies:
+        for cookie in response.cookies:
 
-    print(f"Cookie: {cookie.name}")
+            print(f"Cookie: {cookie.name}")
 
-    cookie_name = cookie.name
+            cookie_name = cookie.name
 
             if not cookie.secure:
                 add_finding(
@@ -153,6 +154,7 @@ if cookie_count == 0:
                     "Set SameSite=Lax or SameSite=Strict where appropriate."
                 )
 
+       
         # Information Disclosure
         server_header = response.headers.get("Server")
 
