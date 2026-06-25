@@ -105,7 +105,7 @@ def check_headers(url):
         # TLS Check
         check_tls(url, findings)
 
-                # Cookie Checks
+        # Cookie Checks
         print("\nChecking Cookies")
         print("=" * 60)
 
